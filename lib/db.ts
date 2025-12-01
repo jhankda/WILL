@@ -14,7 +14,7 @@ export async function getAllPosts() {
   }
 
   try {
-    const recordMap = await notion.getPage(rootNotionPageId);
+    const recordMap = await notion.getPage(rootNotionPageId!);
     
     const { rows } = extractDatabase(recordMap);
 
