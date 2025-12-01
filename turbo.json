@@ -1,7 +1,14 @@
 {
+  "$schema": "https://turbo.build/schema.json",
   "tasks": {
     "build": {
-      "outputs": [".next/**", "!.next/cache/**"]
+      "outputs": [".next/**", "!.next/cache/**"],
+      "env": [
+        "ROOT_PAGE_ID",
+        "NOTION_TOKEN",
+        "NOTION_ACTIVE_USER",
+        "NOTION_TOKEN_V2"
+      ]
     }
   }
 }
