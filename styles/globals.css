@@ -1,0 +1,131 @@
+@import "tailwindcss";
+
+:root {
+  --bg-dark: #2b2d29;
+  /* charcoal green */
+  --accent-yellow: #c7a63a;
+  /* dusty yellow */
+  --off-white: #faf7ef;
+  /* creamy white */
+  --olive: #6b733b;
+  /* secondary shade */
+  --graphite: #2F3231;
+  --gunmetal: #353837;
+  --darkGoldenRod: #A68F26;
+  --graphiteDeep: #2E302C;
+  --greyOlive: #898B8A;
+}
+
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0A0004;
+    --foreground: #ededed;
+  }
+}
+
+@layer utilities {
+  .grain-layer {
+    background-color: #242424;
+    filter: url(#grainy);
+    z-index: 0;
+    
+  }
+
+ 
+}
+
+.rock-3d-regular {
+  font-family: "Rock 3D", system-ui;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.modak-regular {
+  font-family: "Modak", system-ui;
+  font-weight:100;
+  font-style: normal;
+}
+
+.frijole-regular {
+  font-family: "Frijole", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+.footer-h1 {
+  position: fixed;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 4em;
+  padding-top: 50px;
+  font-family: "Corben", cursive;
+  letter-spacing: 0.6em;
+  line-height: 1.4em;
+  text-transform: uppercase;
+  color: teal;
+  font-weight: 400;
+  text-align: center;
+  z-index: 5;
+  pointer-events: none;
+}
+
+.footer-section {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 60vh;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.footer-noise {
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 120%;
+  background:
+  radial-gradient(circle at 50% 50%,
+  rgba(0, 0, 0, 1),
+  rgba(0, 0, 0, 0)),
+  url("data:image/svg+xml,%3Csvg viewBox='0 0 600 600' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  filter: contrast(145%) brightness(650%) invert(100%);
+  margin-top: -15%;
+}
+
+
+@media all and (-webkit-min-device-pixel-ratio:0) and (min-resolution: .001dpcm) {
+  .footer-noise {
+    filter: contrast(125%) brightness(650%) invert(100%);
+    mix-blend-mode: color-dodge;
+  }
+}
+
+.footer-center {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-circle {
+  width: 200px;
+  height: 200px;
+  background-color: antiquewhite;
+  border-radius: 50%;
+  box-shadow: 0 0 50px rgba(250, 235, 215, 0.5);
+}
